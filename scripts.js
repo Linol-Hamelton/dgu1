@@ -116,3 +116,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 });
+
+// Stepik Mobile Menu
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.querySelector('.stepik-mobile-menu');
+    const burger = document.querySelector('.stepik-burger');
+    const closeBtn = document.querySelector('.stepik-mobile-menu__close');
+    const overlay = document.querySelector('.stepik-mobile-menu__overlay');
+    
+    // Open menu
+    function openMenu() {
+        mobileMenu.classList.add('stepik-mobile-menu--active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close menu
+    function closeMenu() {
+        mobileMenu.classList.remove('stepik-mobile-menu--active');
+        document.body.style.overflow = '';
+    }
+    
+    // Event listeners
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    
+    // Header scroll effect
+    const header = document.querySelector('.stepik-header');
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+});

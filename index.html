@@ -8,43 +8,120 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="stepik-header">
         <div class="container">
-            <div class="header__inner">
-                <a href="#" class="logo">GAFFER STUDIO</a>
-                <nav class="nav nav--desktop">
-                    <a href="#hall" class="nav__link">Наш зал</a>
-                    <a href="#projects" class="nav__link">Наши проекты</a>
-                    <a href="#equipment" class="nav__link">Оборудование</a>
-                    <a href="#rates" class="nav__link">Тарифы</a>
-                    <a href="#contacts" class="nav__link">Контакты</a>
+            <div class="stepik-header__inner">
+                <!-- Logo -->
+                <a href="#" class="stepik-logo">
+                    <svg class="stepik-logo__icon" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#2d9c6a"/>
+                        <path d="M30 50L45 65L70 35" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="stepik-logo__text">GAFFER</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="stepik-nav stepik-nav--desktop">
+                    <div class="stepik-nav-item">
+                        <a href="#hall" class="stepik-nav-link">Студия</a>
+                    </div>
+                    <div class="stepik-nav-item">
+                        <a href="#equipment" class="stepik-nav-link">Оборудование</a>
+                    </div>
+                    <div class="stepik-nav-item">
+                        <a href="#rates" class="stepik-nav-link">Тарифы</a>
+                    </div>
+                    <div class="stepik-nav-item">
+                        <a href="#projects" class="stepik-nav-link">Проекты</a>
+                    </div>
+                    <div class="stepik-nav-item stepik-nav-item--dropdown">
+                        <button class="stepik-nav-link stepik-nav-link--dropdown">
+                            Еще
+                            <svg class="stepik-nav-arrow" width="12" height="12" viewBox="0 0 12 12">
+                                <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="stepik-dropdown">
+                            <a href="#contacts" class="stepik-dropdown-link">Контакты</a>
+                            <a href="#" class="stepik-dropdown-link">О нас</a>
+                            <a href="#" class="stepik-dropdown-link">Блог</a>
+                        </div>
+                    </div>
                 </nav>
-                <button class="burger burger--tablet">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <button class="burger burger--mobile">
+
+                <!-- Search Bar -->
+                <div class="stepik-search stepik-search--desktop">
+                    <input type="text" class="stepik-search__input" placeholder="Поиск...">
+                    <svg class="stepik-search__icon" width="20" height="20" viewBox="0 0 20 20">
+                        <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 12L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <!-- User Actions -->
+                <div class="stepik-user-actions">
+                    <a href="#" class="stepik-btn stepik-btn--login">Войти</a>
+                    <div class="stepik-user-avatar" style="display: none;">
+                        <img src="/dgu/avatar-placeholder.jpg" alt="User">
+                    </div>
+                </div>
+
+                <!-- Mobile Burger -->
+                <button class="stepik-burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
         </div>
-        <!-- Mobile/Tablet Menu -->
-        <div class="mobile-menu">
-            <div class="mobile-menu__overlay"></div>
-            <div class="mobile-menu__content">
-                <button class="mobile-menu__close">&times;</button>
-                <nav class="nav nav--mobile">
-                    <a href="#hall" class="nav__link">Наш зал</a>
-                    <a href="#projects" class="nav__link">Наши проекты</a>
-                    <a href="#equipment" class="nav__link">Оборудование</a>
-                    <a href="#rates" class="nav__link">Тарифы</a>
-                    <a href="#contacts" class="nav__link">Контакты</a>
-                </nav>
+
+        <!-- Mobile Menu (Stepik Style) -->
+        <div class="stepik-mobile-menu">
+            <div class="stepik-mobile-menu__header">
+                <a href="#" class="stepik-logo">
+                    <svg class="stepik-logo__icon" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#2d9c6a"/>
+                        <path d="M30 50L45 65L70 35" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="stepik-logo__text">GAFFER</span>
+                </a>
+                <button class="stepik-mobile-menu__close">&times;</button>
+            </div>
+            
+            <div class="stepik-search stepik-search--mobile">
+                <input type="text" class="stepik-search__input" placeholder="Поиск по студии...">
+                <svg class="stepik-search__icon" width="20" height="20" viewBox="0 0 20 20">
+                    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 12L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <nav class="stepik-nav stepik-nav--mobile">
+                <div class="stepik-nav-item">
+                    <a href="#hall" class="stepik-nav-link">Студия</a>
+                </div>
+                <div class="stepik-nav-item">
+                    <a href="#equipment" class="stepik-nav-link">Оборудование</a>
+                </div>
+                <div class="stepik-nav-item">
+                    <a href="#rates" class="stepik-nav-link">Тарифы</a>
+                </div>
+                <div class="stepik-nav-item">
+                    <a href="#projects" class="stepik-nav-link">Проекты</a>
+                </div>
+                <div class="stepik-nav-item">
+                    <a href="#contacts" class="stepik-nav-link">Контакты</a>
+                </div>
+                <div class="stepik-nav-item">
+                    <a href="#" class="stepik-nav-link">О нас</a>
+                </div>
+            </nav>
+
+            <div class="stepik-mobile-menu__footer">
+                <a href="#" class="stepik-btn stepik-btn--login stepik-btn--full">Войти</a>
             </div>
         </div>
+        <div class="stepik-mobile-menu__overlay"></div>
     </header>
 
     <!-- Hero Section -->

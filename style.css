@@ -19,6 +19,351 @@ html {
     scroll-behavior: smooth;
 }
 
+.stepik-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stepik-header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.stepik-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    height: 64px;
+}
+
+/* Logo */
+.stepik-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #2d9c6a;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.stepik-logo__icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Desktop Navigation */
+.stepik-nav--desktop {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.stepik-nav-item {
+    position: relative;
+}
+
+.stepik-nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stepik-nav-link:hover {
+    background: rgba(45, 156, 106, 0.1);
+    color: #2d9c6a;
+}
+
+.stepik-nav-link--dropdown {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.stepik-nav-arrow {
+    transition: transform 0.2s ease;
+}
+
+.stepik-nav-item--dropdown:hover .stepik-nav-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.stepik-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1001;
+}
+
+.stepik-nav-item--dropdown:hover .stepik-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.stepik-dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.stepik-dropdown-link:hover {
+    background: rgba(45, 156, 106, 0.05);
+    color: #2d9c6a;
+}
+
+/* Search */
+.stepik-search {
+    position: relative;
+    width: 240px;
+}
+
+.stepik-search__input {
+    width: 100%;
+    padding: 10px 40px 10px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #f5f7f9;
+}
+
+.stepik-search__input:focus {
+    outline: none;
+    border-color: #2d9c6a;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(45, 156, 106, 0.1);
+}
+
+.stepik-search__icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+
+/* User Actions */
+.stepik-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stepik-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.stepik-btn--login {
+    background: #2d9c6a;
+    color: #fff;
+    border: none;
+}
+
+.stepik-btn--login:hover {
+    background: #268e5d;
+    transform: translateY(-1px);
+}
+
+.stepik-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #2d9c6a;
+}
+
+.stepik-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Burger */
+.stepik-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.stepik-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #333;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.stepik-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.stepik-mobile-menu--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.stepik-mobile-menu__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.stepik-mobile-menu__header {
+    position: relative;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stepik-mobile-menu__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.stepik-mobile-menu--active .stepik-mobile-menu__content {
+    transform: translateX(0);
+}
+
+.stepik-mobile-menu__close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.stepik-nav--mobile {
+    padding: 20px;
+}
+
+.stepik-nav--mobile .stepik-nav-item {
+    margin-bottom: 8px;
+}
+
+.stepik-nav--mobile .stepik-nav-link {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.stepik-nav--mobile .stepik-nav-link:hover {
+    background: rgba(45, 156, 106, 0.1);
+}
+
+.stepik-search--mobile {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stepik-mobile-menu__footer {
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.stepik-btn--full {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+/* Tablet Styles (768px - 1199px) */
+@media (max-width: 1199px) {
+    .stepik-nav--desktop {
+        display: none;
+    }
+    
+    .stepik-burger {
+        display: block;
+    }
+    
+    .stepik-search--desktop {
+        display: none;
+    }
+}
+
+/* Mobile Styles (767px and below) */
+@media (max-width: 767px) {
+    .stepik-header__inner {
+        height: 56px;
+    }
+    
+    .stepik-logo__text {
+        display: none;
+    }
+    
+    .stepik-btn--login {
+        display: none;
+    }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--color-bg);
